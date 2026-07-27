@@ -1,0 +1,16 @@
+{
+  "reminders": [
+    {
+      "id": "example-id",
+      "name": "保号提醒 - 示例",
+      "message": "📱 要开始保号了哦！",
+      "intervalDays": 175,
+      "lastNotifiedAt": null,
+      "channels": ["email"],
+      "channelConfig": {},
+      "enabled": true,
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    }
+  ]
+}

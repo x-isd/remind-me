@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+
+# 运行时数据（含凭证与用户提醒，切勿提交）
+# 用 data/* 而不是 data/，才能再放行示例文件
+data/*
+!data/.gitkeep
+!data/reminders.example.json

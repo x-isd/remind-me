@@ -1,0 +1,16 @@
+name = "baohao-reminder"
+main = "src/worker.ts"
+compatibility_date = "2024-01-01"
+
+# Cron Triggers - 每天检查一次
+[triggers]
+crons = ["0 9 * * *"]
+
+# KV 存储（需要在 Cloudflare Dashboard 创建）
+# [[kv_namespaces]]
+# binding = "REMINDERS_KV"
+# id = "your-kv-namespace-id"
+
+[vars]
+STORAGE_TYPE = "json"
+SCHEDULER_MODE = "external"
