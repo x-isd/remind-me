@@ -1,4 +1,4 @@
-# ⏰ 保号提醒系统 (BaoHao Reminder)
+# ⏰ 保号提醒系统 (Reminder)
 
 一个灵活的定时提醒系统，支持 Telegram、PushPlus、邮箱等多渠道通知，可部署在 Docker、Vercel、Cloudflare Workers 等多个平台。
 
