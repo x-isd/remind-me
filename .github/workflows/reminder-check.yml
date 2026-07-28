@@ -1,1 +1,31 @@
+name: Reminder Check
 
+on:
+  schedule:
+    # 每天北京时间 9:00 和 21:00 检查（UTC 1:00 和 13:00）
+    - cron: '0 1 * * *'
+    - cron: '0 13 * * *'
+  workflow_dispatch: # 支持手动触发
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Reminder Check
+        run: |
+          # 替换为你的实际部署地址
+          ENDPOINT="${{ secrets.APP_URL }}/api/check"
+          API_KEY="${{ secrets.API_KEY }}"
+
+          if [ -n "$API_KEY" ]; then
+            curl -X POST "$ENDPOINT" \
+              -H "Content-Type: application/json" \
+              -H "X-API-Key: $API_KEY" \
+              --max-time 30 \
+              -w "\nHTTP Status: %{http_code}\n"
+          else
+            curl -X POST "$ENDPOINT" \
+              -H "Content-Type: application/json" \
+              --max-time 30 \
+              -w "\nHTTP Status: %{http_code}\n"
+          fi
